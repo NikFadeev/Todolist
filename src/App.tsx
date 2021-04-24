@@ -46,6 +46,7 @@ function App() {
             setTasks({...tasks});
         }
     }
+    
     function changeTaskTitle(id: string, newTitle: string, todolistId: string) {
         let todolistTasks = tasks[todolistId];
         let task = todolistTasks.find(t => t.id === id);
@@ -60,6 +61,7 @@ function App() {
         delete tasks[id]; // удаляем св-во из объекта... значением которого являлся массив тасок
         setTasks({...tasks});
     }
+
     function changeTodolistTitle(id: string, title: string) {
         const todolist = todolists.find(tl => tl.id === id);
         if (todolist) {
