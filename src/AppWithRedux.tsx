@@ -1,13 +1,13 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
-import { TaskType, Todolist } from './Todolist';
-import AddItemForm from './AddItemForm';
-import { StateType } from './state/store';
-import { AddTaskAC, ChangeTaskStatusAC, ChangeTaskTitleAC, RemoveTaskAC } from './state/tasks-reducer';
-import { AddTodolistAC, ChangeTodolistFilterAC, ChangeTodolistTitleAC, RemoveTodolistAC } from './state/todolists-reducer';
-import { AppBar, Button, Container, Grid, IconButton, Paper, Toolbar, Typography } from '@material-ui/core';
-import { Menu } from '@material-ui/icons';
+import { Todolist, TaskType } from './Todolist';
+import AddItemForm from "./AddItemForm";
+import { AppBar, Button, IconButton, Toolbar, Typography, Container, Grid, Paper } from "@material-ui/core";
+import { Menu } from "@material-ui/icons";
+import { AddTodolistAC, ChangeTodolistFilterAC, ChangeTodolistTitleAC, RemoveTodolistAC, todolistsReducer } from './state/todolists-reducer';
+import { AddTaskAC, ChangeTaskStatusAC, ChangeTaskTitleAC, RemoveTaskAC, tasksReducer } from './state/tasks-reducer';
+import { useSelector, useDispatch } from 'react-redux';
+import { StateType } from './state/store';;
 
 export type FilterValuesType = "all" | "active" | "completed";
 export type TodolistType = {
@@ -90,7 +90,6 @@ function AppWithRedux() {
               return <Grid item>
                 <Paper style={{ padding: '10px' }}>
                   <Todolist
-                    key={tl.id}
                     id={tl.id}
                     title={tl.title}
                     tasks={tasksForTodolist}
