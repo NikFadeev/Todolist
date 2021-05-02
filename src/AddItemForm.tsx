@@ -6,9 +6,7 @@ type AddItemFormPropsType = {
   addItem: (title: string) => void
 }
 
-function AddItemForm(props: AddItemFormPropsType) {
-  console.log('addItemForm render');
-
+export default React.memo(function AddItemForm(props: AddItemFormPropsType) {
   let [title, setTitle] = useState("")
   let [error, setError] = useState<string | null>(null)
 
@@ -48,6 +46,4 @@ function AddItemForm(props: AddItemFormPropsType) {
       <ControlPoint />
     </IconButton>
   </div>
-}
-
-export default AddItemForm;
+});

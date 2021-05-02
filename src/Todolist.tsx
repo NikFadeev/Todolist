@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from 'react';
 import { FilterValuesType } from './AppWithRedux';
 import AddItemForm from './AddItemForm';
-import { EditableSpan } from './EditableSpan';
+import EditableSpan from './EditableSpan';
 import { Button, Checkbox, IconButton } from '@material-ui/core';
 import { Delete } from '@material-ui/icons';
 
@@ -25,7 +25,7 @@ type PropsType = {
   changeTaskTitle: (taskId: string, newTitle: string, todolistId: string) => void
 }
 
-export function Todolist(props: PropsType) {
+export default React.memo(function Todolist(props: PropsType) {
   const addTask = (title: string) => {
     props.addTask(title, props.id);
   }
@@ -84,4 +84,4 @@ export function Todolist(props: PropsType) {
             </Button>
     </div>
   </div>
-}
+});

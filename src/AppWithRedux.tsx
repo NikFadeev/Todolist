@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Todolist, TaskType } from './Todolist';
+import Todolist, { TaskType } from './Todolist';
 import AddItemForm from "./AddItemForm";
 import { AppBar, Button, IconButton, Toolbar, Typography, Container, Grid, Paper } from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
